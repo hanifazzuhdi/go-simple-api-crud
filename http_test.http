@@ -1,0 +1,31 @@
+### GET Nationalities
+GET http://localhost:8080/api/nationalities
+Accept: application/json
+
+### Get Nationality by ID
+GET http://localhost:8080/api/nationalities/6
+Accept: application/json
+
+### Create Nationality
+POST http://localhost:8080/api/nationalities
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nationality_name": "Singapore",
+  "nationality_code": "SG"
+}
+
+### Update Nationality
+PUT http://localhost:8080/api/nationalities/6
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nationality_name": "Thailand",
+  "nationality_code": "TH"
+}
+
+### Delete Nationality
+DELETE http://localhost:8080/api/nationalities/6
+Accept: application/json
