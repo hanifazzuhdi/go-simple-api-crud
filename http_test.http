@@ -29,3 +29,97 @@ Content-Type: application/json
 ### Delete Nationality
 DELETE http://localhost:8080/api/nationalities/6
 Accept: application/json
+
+### Get Customers list
+GET http://localhost:8080/api/customers
+Accept: application/json
+
+### Get Customer by ID
+GET http://localhost:8080/api/customers/2
+Accept: application/json
+
+### Create Customer
+POST http://localhost:8080/api/customers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cst_name": "Angga",
+  "cst_dob": "2000-02-15",
+  "cst_phonenum": "62891234567",
+  "cst_email": "angga@example.com",
+  "nationality_id": 8
+}
+
+### Update Customer
+PUT http://localhost:8080/api/customers/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cst_name": "Bagus Updated",
+  "cst_dob": "1990-02-15",
+  "cst_phonenum": "62899876543",
+  "cst_email": "bagus@example.com",
+  "nationality_id": 7
+}
+
+### Delete Customer
+DELETE http://localhost:8080/api/customers/1
+Accept: application/json
+
+### Synchronize customer family data
+POST http://localhost:8080/api/customers/2/families/sync
+Accept: application/json
+Content-Type: application/json
+
+[
+  {
+    "fl_id": 2,
+    "fl_relation": "Father",
+    "fl_name": "John Doe",
+    "fl_dob": "1978-03-10"
+  },
+  {
+    "fl_id": 3,
+    "fl_relation": "Child",
+    "fl_name": "Bob Doe",
+    "fl_dob": "2015-06-20"
+  }
+]
+
+### Get Family list
+GET http://localhost:8080/api/families
+Accept: application/json
+
+### Get Family by ID
+GET http://localhost:8080/api/families/3
+Accept: application/json
+
+### Create Family
+POST http://localhost:8080/api/families
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cst_id": 2,
+  "fl_relation": "Father",
+  "fl_name": "John Doe",
+  "fl_dob": "1970-01-01"
+}
+
+### Update Family
+PUT http://localhost:8080/api/families/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cst_id": 1,
+  "fl_relation": "Mother",
+  "fl_name": "Jane Doe",
+  "fl_dob": "1975-05-05"
+}
+
+### Delete Family
+DELETE http://localhost:8080/api/families/3
+Accept: application/json
