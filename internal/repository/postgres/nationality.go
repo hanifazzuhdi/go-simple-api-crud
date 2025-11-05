@@ -15,7 +15,7 @@ type nationalityRepository struct {
 }
 
 func NewNationalityRepository(db *pgx.Conn) repository.NationalityRepository {
-	return nationalityRepository{
+	return &nationalityRepository{
 		db: db,
 		sq: sq.StatementBuilder.PlaceholderFormat(sq.Dollar),
 	}

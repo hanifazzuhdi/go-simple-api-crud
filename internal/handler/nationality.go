@@ -14,8 +14,8 @@ type NationalityHandler struct {
 	nationalityService service.NationalityService
 }
 
-func NewNationalityHandler(nationalityService service.NationalityService) NationalityHandler {
-	return NationalityHandler{
+func NewNationalityHandler(nationalityService service.NationalityService) *NationalityHandler {
+	return &NationalityHandler{
 		nationalityService: nationalityService,
 	}
 }
