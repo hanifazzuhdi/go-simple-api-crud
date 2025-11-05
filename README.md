@@ -7,7 +7,7 @@ and a PostgresSQL database.
 
 - **Go** - Programming language
 - **Gorilla Mux** - HTTP router and URL matcher for building Go web servers
-- **PGX** - PostgreSQL driver and toolkit for Go
+- **PGX V5** - PostgreSQL driver and toolkit for Go
 - **Squirrel** - SQL query builder for Go
 - **Testify** - Testing toolkit for Go
 - **golang-migrate/migrate** - Database migration tool for Go
@@ -38,7 +38,7 @@ go mod tidy
 4. Run database migrations:
 
 ```bash
-migrate -path db/migrations -database "postgresql://username:password@localhost/dbname?sslmode=disable" up
+migrate -path db/migrations -database "pgx5://username:password@host:port/dbname?sslmode=disable" up
 ```
 
 Migration files are located in `db/migrations/` directory.
